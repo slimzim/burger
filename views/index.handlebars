@@ -1,0 +1,35 @@
+<div class="row">
+
+  <div class="col-md-6">
+    <h2 class="ranchers text-center">Menu:</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h2 class="ranchers text-center">Finished:</h2>
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+
+</div>  
+
+<br>
+
+<div>
+  <h2 class="ranchers text-center">Add a Burger:</h2>
+  <form class="create-form">
+      <input type="text" id="burger" name="name" placeholder="e.g. Chicken Sandwich">
+      <button type="submit">Add Burger</button>  
+  </form>
+</div>
